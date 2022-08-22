@@ -2,14 +2,14 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.xeno_overlay
-    - paragraphs.paragraphs_type.xeno_hero
+    - field.storage.paragraph.kdcl_overlay
+    - paragraphs.paragraphs_type.kdcl_hero
   module:
     - options
-id: paragraph.xeno_hero.xeno_overlay
-field_name: xeno_overlay
+id: paragraph.kdcl_hero.kdcl_overlay
+field_name: kdcl_overlay
 entity_type: paragraph
-bundle: xeno_hero
+bundle: kdcl_hero
 label: Overlay
 description: ''
 required: false

@@ -4,8 +4,8 @@ dependencies:
   module:
     - options
     - paragraphs
-id: paragraph.xeno_invert
-field_name: xeno_invert
+id: paragraph.kdcl_invert
+field_name: kdcl_invert
 entity_type: paragraph
 type: list_string
 settings:

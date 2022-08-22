@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies: {  }
+name: kdcl_hero_desktop_2x
+label: 'KDCL Hero Desktop 2x'
+effects:
+  c29275af-d74d-4456-be10-5c8461e6837c:
+    uuid: c29275af-d74d-4456-be10-5c8461e6837c
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 2880
+      height: 1088
+      anchor: center-center
+  0355ee5a-9681-4be8-85cd-5d47c5fc92a3:
+    uuid: 0355ee5a-9681-4be8-85cd-5d47c5fc92a3
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

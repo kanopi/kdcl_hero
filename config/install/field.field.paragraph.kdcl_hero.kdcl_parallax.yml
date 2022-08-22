@@ -2,14 +2,14 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.xeno_parallax
-    - paragraphs.paragraphs_type.xeno_hero
+    - field.storage.paragraph.kdcl_parallax
+    - paragraphs.paragraphs_type.kdcl_hero
   module:
     - options
-id: paragraph.xeno_hero.xeno_parallax
-field_name: xeno_parallax
+id: paragraph.kdcl_hero.kdcl_parallax
+field_name: kdcl_parallax
 entity_type: paragraph
-bundle: xeno_hero
+bundle: kdcl_hero
 label: Parallax
 description: ''
 required: false

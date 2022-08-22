@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.kdcl_hero_background_video.kdcl_media_oembed_video
+    - media.type.kdcl_hero_background_video
+id: media.kdcl_hero_background_video.media_library
+targetEntityType: media
+bundle: kdcl_hero_background_video
+mode: media_library
+content:
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  kdcl_media_oembed_video: true
+  langcode: true
+  path: true
+  status: true
+  uid: true

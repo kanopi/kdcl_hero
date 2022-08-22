@@ -1,0 +1,30 @@
+kdcl_hero.small:
+  label: small
+  mediaQuery: 'all'
+  multipliers:
+    - 1x
+    - 2x
+kdcl_hero.small-med:
+  label: small-med
+  mediaQuery: 'all and (min-width: 26em)'
+  multipliers:
+    - 1x
+    - 2x
+kdcl_hero.small-large:
+  label: small-large
+  mediaQuery: 'all and (min-width: 41em)'
+  multipliers:
+    - 1x
+    - 2x
+kdcl_hero.medium:
+  label: medium
+  mediaQuery: 'all and (min-width: 48em)'
+  multipliers:
+    - 1x
+    - 2x
+kdcl_hero.large:
+  label: large
+  mediaQuery: 'all and (min-width: 61.25em)'
+  multipliers:
+    - 1x
+    - 2x

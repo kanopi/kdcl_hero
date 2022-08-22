@@ -4,30 +4,21 @@ dependencies:
   module:
     - options
     - paragraphs
-id: paragraph.kdcl_parallax
-field_name: kdcl_parallax
+id: paragraph.kdcl_content_location
+field_name: kdcl_content_location
 entity_type: paragraph
 type: list_string
 settings:
   allowed_values:
     -
-      value: '6'
-      label: Slowest
+      value: center
+      label: Center
     -
-      value: '5'
-      label: Slower
+      value: left
+      label: Left
     -
-      value: '4'
-      label: Slow
-    -
-      value: '3'
-      label: Fast
-    -
-      value: '2'
-      label: Faster
-    -
-      value: '1'
-      label: Fastest
+      value: right
+      label: Right
   allowed_values_function: ''
 module: options
 locked: false

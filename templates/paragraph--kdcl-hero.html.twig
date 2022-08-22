@@ -32,11 +32,13 @@
  *   is an administrator.
  *
  * Fields:
- * - kdcl_background: Media field
- * - kdcl_content: Paragraphs field
+ * - kdcl_background: Media field.
+ * - kdcl_content: Long Text field.
+ * - kdcl_content_location: A select list with multiple options.
  * - kdcl_invert: A select list with one option.
- * - kdcl_overlay A select list with multiple options.
- * - kdcl_parallax A select list with one option.
+ * - kdcl_overlay: A select list with multiple options.
+ * - kdcl_parallax: A select list with one option.
+ * - kdcl_zoom: A select list with multiple options.
  *
  * @see template_preprocess_paragraph()
  *
@@ -54,6 +56,40 @@ set classes = [
 view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 ]
 %}
+
+{# Renders Content Location field. #}
+{# Sets class from values in database. #}
+{% if content.kdcl_content_location|render %}
+  {% set location_position = content.kdcl_content_location['#items'].getString() %}
+  {% set location_positions = [
+    'center' == location_position ? 'paragraph--location__center',
+    'left' == location_position ? 'paragraph--location__left',
+    'right' == location_position ? 'paragraph--location__right',
+  ]
+  %}
+{% endif %}
+
+{# Merges Content Location field with classes. #}
+{% set content_location_field = content.kdcl_content_location|render %}
+{% if content_location_field %}
+  {% set classes = classes|merge(location_positions) %}
+{% endif %}
+
+{# Renders Invert field. #}
+{# Sets class from values in database. #}
+{% if content.kdcl_invert|render %}
+  {% set invert_level = content.kdcl_invert['#items'].getString() %}
+  {% set invert_levels = [
+    'invert' == invert_level ? 'paragraph--overlay__invert',
+  ]
+  %}
+{% endif %}
+
+{# Merges Invert field with classes. #}
+{% set invert_field = content.kdcl_invert|render %}
+{% if invert_field %}
+  {% set classes = classes|merge(invert_levels) %}
+{% endif %}
 
 {# Renders Overlay field. #}
 {# Sets data attibute value from values in database. #}
@@ -88,39 +124,17 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   %}
 {% endif %}
 
-{# Renders Parallax Offset field. #}
-{# Sets data attibute value from user input. #}
-{% if content.kdcl_offset|render %}
-  {% set parallax_offset = content.kdcl_offset['#items'].getString() %}
-{% endif %}
-
-{# Renders Invert field. #}
-{# Sets class from values in database. #}
-{% if content.kdcl_invert|render %}
-  {% set invert_level = content.kdcl_invert['#items'].getString() %}
-  {% set invert_levels = [
-    'invert' == invert_level ? 'paragraph--overlay--invert',
-  ]
-  %}
-{% endif %}
-
-{# Merges Invert field with classes. #}
-{% set invert_field = content.kdcl_invert|render %}
-{% if invert_field %}
-  {% set classes = classes|merge(invert_levels) %}
-{% endif %}
-
 {# Renders Zoom field. #}
 {# Sets class from values in database. #}
 {% if content.kdcl_zoom|render %}
   {% set zoom_level = content.kdcl_zoom['#items'].getString() %}
   {% set zoom_levels = [
-    '1' == zoom_level ? 'paragraph--zoom paragraph--zoom--1',
-    '2' == zoom_level ? 'paragraph--zoom paragraph--zoom--2',
-    '3' == zoom_level ? 'paragraph--zoom paragraph--zoom--3',
-    '4' == zoom_level ? 'paragraph--zoom paragraph--zoom--4',
-    '5' == zoom_level ? 'paragraph--zoom paragraph--zoom--5',
-    '6' == zoom_level ? 'paragraph--zoom paragraph--zoom--6',
+    '1' == zoom_level ? 'paragraph--zoom paragraph--zoom__1',
+    '2' == zoom_level ? 'paragraph--zoom paragraph--zoom__2',
+    '3' == zoom_level ? 'paragraph--zoom paragraph--zoom__3',
+    '4' == zoom_level ? 'paragraph--zoom paragraph--zoom__4',
+    '5' == zoom_level ? 'paragraph--zoom paragraph--zoom__5',
+    '6' == zoom_level ? 'paragraph--zoom paragraph--zoom__6',
     ]
   %}
  {% endif %}
@@ -132,7 +146,7 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 {% endif %}
 
 {# Prints div with classes, & content w/o img/invert/overlay/parallax fields. #}
-<div{{ attributes.addClass(classes).setAttribute('data-overlay', overlay_levels).setAttribute('data-speed', parallax_speeds).setAttribute('data-offset', parallax_offset) }}>
+<div{{ attributes.addClass(classes).setAttribute('data-overlay', overlay_levels).setAttribute('data-speed', parallax_speeds) }}>
   {% if content.kdcl_background|render %}
     <div class="paragraph--type--kdcl-hero__background">
       {{ content.kdcl_background }}

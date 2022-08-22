@@ -4,30 +4,30 @@ dependencies:
   module:
     - options
     - paragraphs
-id: paragraph.xeno_zoom
-field_name: xeno_zoom
+id: paragraph.kdcl_zoom
+field_name: kdcl_zoom
 entity_type: paragraph
 type: list_string
 settings:
   allowed_values:
     -
       value: '6'
-      label: 'Slowest'
+      label: Slowest
     -
       value: '5'
-      label: 'Slower'
+      label: Slower
     -
       value: '4'
-      label: 'Slow'
+      label: Slow
     -
       value: '3'
-      label: 'Fast'
+      label: Fast
     -
       value: '2'
-      label: 'Faster'
+      label: Faster
     -
       value: '1'
-      label: 'Fastest'
+      label: Fastest
   allowed_values_function: ''
 module: options
 locked: false

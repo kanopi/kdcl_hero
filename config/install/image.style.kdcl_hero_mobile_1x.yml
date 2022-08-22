@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: kdcl_hero_mobile_1x
+label: 'KDCL Hero Mobile 1x'
+effects:
+  d0906c07-3e70-42e5-b319-cf3916e74f32:
+    uuid: d0906c07-3e70-42e5-b319-cf3916e74f32
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 320
+      height: 211
+      crop_type: focal_point
+  93dc84e1-2aca-496a-889c-dce35d0fd04d:
+    uuid: 93dc84e1-2aca-496a-889c-dce35d0fd04d
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

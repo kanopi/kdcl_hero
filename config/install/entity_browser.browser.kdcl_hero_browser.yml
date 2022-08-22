@@ -1,0 +1,38 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_browser_entity_form
+name: kdcl_hero_browser
+label: 'KDCL Hero Browser'
+display: modal
+display_configuration:
+  width: '650'
+  height: '500'
+  link_text: 'Select Backgrounds'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  bec8894a-733a-4638-8052-d8ef12102b65:
+    id: entity_form
+    uuid: bec8894a-733a-4638-8052-d8ef12102b65
+    label: 'Upload Image'
+    weight: 1
+    settings:
+      submit_text: Save
+      entity_type: media
+      bundle: kdcl_hero_background_image
+      form_mode: default
+  0b47ddd1-31d5-4409-92a8-f83e39c5842a:
+    id: entity_form
+    uuid: 0b47ddd1-31d5-4409-92a8-f83e39c5842a
+    label: 'Remote Video'
+    weight: 2
+    settings:
+      submit_text: Save
+      entity_type: media
+      bundle: kdcl_hero_background_video
+      form_mode: default

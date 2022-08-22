@@ -1,27 +1,26 @@
-langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.xeno_content
-    - paragraphs.paragraphs_type.xeno_hero
+    - field.storage.paragraph.kdcl_content
+    - paragraphs.paragraphs_type.kdcl_hero
   module:
-    - entity_reference_revisions
-id: paragraph.xeno_hero.xeno_content
-field_name: xeno_content
+    - allowed_formats
+    - text
+    - tmgmt_content
+third_party_settings:
+  allowed_formats:
+    allowed_formats: {  }
+  tmgmt_content:
+    excluded: false
+id: paragraph.kdcl_hero.kdcl_content
+field_name: kdcl_content
 entity_type: paragraph
-bundle: xeno_hero
+bundle: kdcl_hero
 label: Content
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings:
-  handler: 'default:paragraph'
-  handler_settings:
-    target_bundles: null
-    target_bundles_drag_drop:
-      xeno_hero:
-        weight: 2
-        enabled: false
-field_type: entity_reference_revisions
+settings: {  }
+field_type: text_long

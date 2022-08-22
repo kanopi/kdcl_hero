@@ -4,22 +4,22 @@ dependencies:
   module:
     - file
     - image
-    - paragraphs
-id: paragraph.xeno_background_image
-field_name: xeno_background_image
-entity_type: paragraph
+    - media
+id: media.kdcl_media_image
+field_name: kdcl_media_image
+entity_type: media
 type: image
 settings:
+  target_type: file
+  display_field: false
+  display_default: false
   uri_scheme: public
   default_image:
-    uuid: ''
+    uuid: null
     alt: ''
     title: ''
     width: null
     height: null
-  target_type: file
-  display_field: false
-  display_default: false
 module: image
 locked: false
 cardinality: 1

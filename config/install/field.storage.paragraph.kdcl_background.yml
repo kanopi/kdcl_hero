@@ -2,15 +2,14 @@ langcode: en
 status: true
 dependencies:
   module:
+    - media
     - paragraphs
-id: paragraph.xeno_offset
-field_name: xeno_offset
+id: paragraph.kdcl_background
+field_name: kdcl_background
 entity_type: paragraph
-type: string
+type: entity_reference
 settings:
-  max_length: 255
-  is_ascii: false
-  case_sensitive: false
+  target_type: media
 module: core
 locked: false
 cardinality: 1

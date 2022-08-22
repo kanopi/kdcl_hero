@@ -2,69 +2,128 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.xeno_hero.xeno_background_image
-    - field.field.paragraph.xeno_hero.xeno_content
-    - field.field.paragraph.xeno_hero.xeno_invert
-    - field.field.paragraph.xeno_hero.xeno_offset
-    - field.field.paragraph.xeno_hero.xeno_overlay
-    - field.field.paragraph.xeno_hero.xeno_parallax
-    - field.field.paragraph.xeno_hero.xeno_zoom
-    - image.style.thumbnail
-    - paragraphs.paragraphs_type.xeno_hero
+    - entity_browser.browser.kdcl_hero_browser
+    - field.field.paragraph.kdcl_hero.kdcl_background
+    - field.field.paragraph.kdcl_hero.kdcl_content
+    - field.field.paragraph.kdcl_hero.kdcl_content_location
+    - field.field.paragraph.kdcl_hero.kdcl_invert
+    - field.field.paragraph.kdcl_hero.kdcl_overlay
+    - field.field.paragraph.kdcl_hero.kdcl_parallax
+    - field.field.paragraph.kdcl_hero.kdcl_zoom
+    - paragraphs.paragraphs_type.kdcl_hero
   module:
-    - image
-    - paragraphs
-id: paragraph.xeno_hero.default
+    - entity_browser
+    - field_group
+    - text
+third_party_settings:
+  field_group:
+    group_content:
+      children:
+        - group_main
+        - group_utilities
+      label: Content
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        direction: horizontal
+        width_breakpoint: 640
+    group_main:
+      children:
+        - kdcl_background
+        - kdcl_content
+        - kdcl_content_location
+      label: Main
+      region: content
+      parent_name: group_content
+      weight: 10
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: open
+        description: ''
+        required_fields: true
+    group_utilities:
+      children:
+        - kdcl_overlay
+        - kdcl_invert
+        - kdcl_parallax
+        - kdcl_zoom
+      label: Utilities
+      region: content
+      parent_name: group_content
+      weight: 11
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+id: paragraph.kdcl_hero.default
 targetEntityType: paragraph
-bundle: xeno_hero
+bundle: kdcl_hero
 mode: default
 content:
-  xeno_background_image:
-    weight: 0
+  kdcl_background:
+    type: entity_browser_entity_reference
+    weight: 5
+    region: content
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+      entity_browser: kdcl_hero_browser
+      field_widget_display: label
+      field_widget_edit: true
+      field_widget_remove: true
+      field_widget_replace: true
+      open: false
+      field_widget_display_settings: {  }
+      selection_mode: selection_append
     third_party_settings: {  }
-    type: image_image
-  xeno_content:
-    type: entity_reference_paragraphs
-    weight: 1
+  kdcl_content:
+    type: text_textarea
+    weight: 6
+    region: content
     settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: closed
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
-    third_party_settings: {  }
-  xeno_invert:
-    weight: 4
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-  xeno_offset:
-    weight: 7
-    settings:
-      size: 60
+      rows: 5
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
+  kdcl_content_location:
+    type: options_select
+    weight: 7
     region: content
-  xeno_overlay:
+    settings: {  }
+    third_party_settings: {  }
+  kdcl_invert:
+    type: options_select
     weight: 3
+    region: content
     settings: {  }
     third_party_settings: {  }
+  kdcl_overlay:
     type: options_select
-  xeno_parallax:
     weight: 2
+    region: content
     settings: {  }
     third_party_settings: {  }
+  kdcl_parallax:
     type: options_select
-  xeno_zoom:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  kdcl_zoom:
+    type: options_select
     weight: 5
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_select
 hidden:
   created: true
   status: true

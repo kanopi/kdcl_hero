@@ -1,0 +1,35 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.kdcl_hero_desktop_1x
+    - image.style.kdcl_hero_desktop_2x
+    - image.style.kdcl_hero_mobile_1x
+    - image.style.kdcl_hero_mobile_2x
+  module:
+    - kdcl_hero
+id: kdcl_hero
+label: 'KDCL Hero'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: kdcl_hero_desktop_1x
+    breakpoint_id: kdcl_hero.medium
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: kdcl_hero_desktop_2x
+    breakpoint_id: kdcl_hero.medium
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: kdcl_hero_mobile_1x
+    breakpoint_id: kdcl_hero.small
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: kdcl_hero_mobile_2x
+    breakpoint_id: kdcl_hero.small
+    multiplier: 2x
+breakpoint_group: kdcl_hero
+fallback_image_style: kdcl_hero_mobile_1x

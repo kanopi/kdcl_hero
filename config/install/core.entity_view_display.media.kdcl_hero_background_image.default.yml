@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.kdcl_hero_background_image.kdcl_media_image
+    - media.type.kdcl_hero_background_image
+    - responsive_image.styles.kdcl_hero
+  module:
+    - responsive_image
+id: media.kdcl_hero_background_image.default
+targetEntityType: media
+bundle: kdcl_hero_background_image
+mode: default
+content:
+  kdcl_media_image:
+    type: responsive_image
+    label: visually_hidden
+    settings:
+      responsive_image_style: kdcl_hero
+      image_link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

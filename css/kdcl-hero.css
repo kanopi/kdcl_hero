@@ -79,7 +79,7 @@
   z-index: 2;
 }
 
-.paragraph--overlay--invert[data-overlay]::before {
+.paragraph--overlay__invert[data-overlay]::before {
   background: #fff none repeat scroll 0 0;
 }
 

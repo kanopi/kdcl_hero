@@ -4,8 +4,8 @@ dependencies:
   module:
     - options
     - paragraphs
-id: paragraph.xeno_overlay
-field_name: xeno_overlay
+id: paragraph.kdcl_overlay
+field_name: kdcl_overlay
 entity_type: paragraph
 type: list_string
 settings:

@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+id: kdcl_hero_background_video
+label: 'KDCL Hero Background Video'
+description: ''
+source: 'oembed:video'
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: kdcl_media_oembed_video
+  thumbnails_directory: 'public://hero/oembed_thumbnails/[date:custom:Y-m]'
+  providers: {  }
+field_map: {  }

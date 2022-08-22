@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: kdcl_hero_desktop_1x
+label: 'KDCL Hero Desktop 1x'
+effects:
+  e9dfb17c-be3e-42d1-b6e8-7cdce9ce2c8c:
+    uuid: e9dfb17c-be3e-42d1-b6e8-7cdce9ce2c8c
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1440
+      height: 544
+      crop_type: focal_point
+  02159027-6502-4a0b-ae1e-ce5c316fea2a:
+    uuid: 02159027-6502-4a0b-ae1e-ce5c316fea2a
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp
