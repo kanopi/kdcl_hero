@@ -4,4 +4,7 @@ core_version_requirement: ^9 || ^10
 description: Hero component with media background, parallax and an overlay.
 package: Paragraphs
 dependencies:
+  - entity_browser
+  - entity_browser_entity_form
+  - field_group
   - paragraphs

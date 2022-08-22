@@ -14,12 +14,12 @@ image_style_mappings:
   -
     image_mapping_type: image_style
     image_mapping: kdcl_hero_desktop_1x
-    breakpoint_id: kdcl_hero.medium
+    breakpoint_id: kdcl_hero.small-med
     multiplier: 1x
   -
     image_mapping_type: image_style
     image_mapping: kdcl_hero_desktop_2x
-    breakpoint_id: kdcl_hero.medium
+    breakpoint_id: kdcl_hero.small-med
     multiplier: 2x
   -
     image_mapping_type: image_style

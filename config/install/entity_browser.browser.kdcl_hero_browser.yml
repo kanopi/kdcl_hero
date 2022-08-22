@@ -7,9 +7,9 @@ name: kdcl_hero_browser
 label: 'KDCL Hero Browser'
 display: modal
 display_configuration:
-  width: '650'
-  height: '500'
-  link_text: 'Select Backgrounds'
+  width: '720'
+  height: '680'
+  link_text: 'Select Background'
   auto_open: false
 selection_display: no_display
 selection_display_configuration: {  }

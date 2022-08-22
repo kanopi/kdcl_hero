@@ -5,17 +5,7 @@ dependencies:
     - field.storage.media.kdcl_media_image
     - media.type.kdcl_hero_background_image
   module:
-    - content_translation
     - image
-    - tmgmt_content
-third_party_settings:
-  content_translation:
-    translation_sync:
-      alt: alt
-      file: '0'
-      title: '0'
-  tmgmt_content:
-    excluded: false
 id: media.kdcl_hero_background_image.kdcl_media_image
 field_name: kdcl_media_image
 entity_type: media

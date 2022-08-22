@@ -6,10 +6,6 @@ dependencies:
     - paragraphs.paragraphs_type.kdcl_hero
   module:
     - options
-    - tmgmt_content
-third_party_settings:
-  tmgmt_content:
-    excluded: false
 id: paragraph.kdcl_hero.kdcl_invert
 field_name: kdcl_invert
 entity_type: paragraph

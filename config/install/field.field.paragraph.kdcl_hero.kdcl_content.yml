@@ -6,12 +6,9 @@ dependencies:
   module:
     - allowed_formats
     - text
-    - tmgmt_content
 third_party_settings:
   allowed_formats:
     allowed_formats: {  }
-  tmgmt_content:
-    excluded: false
 id: paragraph.kdcl_hero.kdcl_content
 field_name: kdcl_content
 entity_type: paragraph
