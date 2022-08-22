@@ -1,10 +1,10 @@
-xeno-hero:
+kdcl-hero:
   css:
     component:
-      css/xeno-hero.css:
+      css/kdcl-hero.css:
         minified: false
   js:
-    js/xeno-hero.js:
+    js/kdcl-hero.js:
       minified: false
   dependencies:
     - core/jquery

@@ -1,13 +1,13 @@
 {
-  "name": "xenomedia/xeno_hero",
-  "type": "drupal-custom-module",
-  "description": "Drupal 8 module that creates a Hero Paragraphs bundle.",
+  "name": "kanopi/kdcl_hero",
+  "type": "drupal-module",
+  "description": "Hero component with media background, parallax and an overlay.",
   "keywords": ["Drupal"],
   "license": "GPL-2.0+",
-  "homepage": "https://github.com/xenomedia/xeno_hero",
+  "homepage": "https://github.com/kanopi/kdcl_hero",
   "support": {
-    "issues": "https://github.com/xenomedia/xeno_hero/issues",
-    "source": "https://github.com/xenomedia/xeno_hero"
+    "issues": "https://github.com/kanopi/kdcl_hero/issues",
+    "source": "https://github.com/kanopi/kdcl_hero"
   },
   "require": { }
 }

@@ -2,15 +2,15 @@
 
 /**
  * @file
- * Xeno Hero module file.
+ * KDCL Hero module file.
  */
 
 /**
  * Implements hook_theme().
  */
-function xeno_hero_theme($existing, $type, $theme, $path) {
+function kdcl_hero_theme($existing, $type, $theme, $path) {
   return [
-    'paragraph__xeno_hero' => [
+    'paragraph__kdcl_hero' => [
       'base hook' => 'paragraph',
     ],
   ];

@@ -1,7 +1,7 @@
 name: KDCL Hero Component
 type: module
 core_version_requirement: ^9 || ^10
-description: A reusable Hero Paragraph bundle with parallax and an overlay.
+description: Hero component with media background, parallax and an overlay.
 package: Paragraphs
 dependencies:
   - paragraphs

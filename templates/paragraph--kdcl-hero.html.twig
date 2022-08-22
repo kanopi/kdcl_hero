@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Default theme implementation to display the Xeno Hero Paragraphs bundle.
+ * Default theme implementation to display the KDCL Hero Paragraph.
  *
  * Available variables:
  * - paragraph: Full paragraph entity.
@@ -32,11 +32,11 @@
  *   is an administrator.
  *
  * Fields:
- * - xeno_background_image: Image field
- * - xeno_content: Paragraphs field
- * - xeno_invert: A select list with one option.
- * - xeno_overlay A select list with multiple options.
- * - xeno_parallax A select list with one option.
+ * - kdcl_background: Media field
+ * - kdcl_content: Paragraphs field
+ * - kdcl_invert: A select list with one option.
+ * - kdcl_overlay A select list with multiple options.
+ * - kdcl_parallax A select list with one option.
  *
  * @see template_preprocess_paragraph()
  *
@@ -44,7 +44,7 @@
  */
 #}
 
-{{ attach_library('xeno_hero/xeno-hero') }}
+{{ attach_library('kdcl_hero/kdcl-hero') }}
 
 {# The template default set classes. #}
 {%
@@ -57,8 +57,8 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 
 {# Renders Overlay field. #}
 {# Sets data attibute value from values in database. #}
-{% if content.xeno_overlay|render %}
-  {% set overlay_level = content.xeno_overlay['#items'].getString() %}
+{% if content.kdcl_overlay|render %}
+  {% set overlay_level = content.kdcl_overlay['#items'].getString() %}
   {% set overlay_levels = [
     '1' == overlay_level ? '1',
     '2' == overlay_level ? '2',
@@ -75,8 +75,8 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 
 {# Renders Parallax field. #}
 {# Sets data attibute value from values in database. #}
-{% if content.xeno_parallax|render %}
-  {% set parallax_speed = content.xeno_parallax['#items'].getString() %}
+{% if content.kdcl_parallax|render %}
+  {% set parallax_speed = content.kdcl_parallax['#items'].getString() %}
   {% set parallax_speeds = [
     '1' == parallax_speed ? '1',
     '2' == parallax_speed ? '2',
@@ -90,14 +90,14 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 
 {# Renders Parallax Offset field. #}
 {# Sets data attibute value from user input. #}
-{% if content.xeno_offset|render %}
-  {% set parallax_offset = content.xeno_offset['#items'].getString() %}
+{% if content.kdcl_offset|render %}
+  {% set parallax_offset = content.kdcl_offset['#items'].getString() %}
 {% endif %}
 
 {# Renders Invert field. #}
 {# Sets class from values in database. #}
-{% if content.xeno_invert|render %}
-  {% set invert_level = content.xeno_invert['#items'].getString() %}
+{% if content.kdcl_invert|render %}
+  {% set invert_level = content.kdcl_invert['#items'].getString() %}
   {% set invert_levels = [
     'invert' == invert_level ? 'paragraph--overlay--invert',
   ]
@@ -105,15 +105,15 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 {% endif %}
 
 {# Merges Invert field with classes. #}
-{% set invert_field = content.xeno_invert|render %}
+{% set invert_field = content.kdcl_invert|render %}
 {% if invert_field %}
   {% set classes = classes|merge(invert_levels) %}
 {% endif %}
 
 {# Renders Zoom field. #}
 {# Sets class from values in database. #}
-{% if content.xeno_zoom|render %}
-  {% set zoom_level = content.xeno_zoom['#items'].getString() %}
+{% if content.kdcl_zoom|render %}
+  {% set zoom_level = content.kdcl_zoom['#items'].getString() %}
   {% set zoom_levels = [
     '1' == zoom_level ? 'paragraph--zoom paragraph--zoom--1',
     '2' == zoom_level ? 'paragraph--zoom paragraph--zoom--2',
@@ -126,17 +126,17 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
  {% endif %}
 
 {# Merges Zoom field with classes. #}
-{% set zoom_field = content.xeno_zoom|render %}
+{% set zoom_field = content.kdcl_zoom|render %}
 {% if zoom_field %}
   {% set classes = classes|merge(zoom_levels) %}
 {% endif %}
 
 {# Prints div with classes, & content w/o img/invert/overlay/parallax fields. #}
 <div{{ attributes.addClass(classes).setAttribute('data-overlay', overlay_levels).setAttribute('data-speed', parallax_speeds).setAttribute('data-offset', parallax_offset) }}>
-  {% if content.xeno_background_image|render %}
-    <div class="paragraph--type--xeno-hero__image">
-      {{ content.xeno_background_image }}
+  {% if content.kdcl_background|render %}
+    <div class="paragraph--type--kdcl-hero__background">
+      {{ content.kdcl_background }}
     </div>
   {% endif %}
-  {{ content|without('xeno_background_image', 'xeno_invert', 'xeno_offset', 'xeno_overlay', 'xeno_parallax') }}
+  {{ content|without('kdcl_background', 'kdcl_invert', 'kdcl_offset', 'kdcl_overlay', 'kdcl_parallax') }}
 </div>

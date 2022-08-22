@@ -1,2 +1,2 @@
-# xeno_hero
-Drupal 8 module that creates a Hero Paragraphs bundle.
+# KDCL Hero Component
+Hero component with media background, parallax and an overlay.

@@ -15,7 +15,7 @@
     });
 
     // For each of background parallax elements.
-    $('.paragraph--type--xeno-hero .paragraph--type--xeno-hero__image').each(function(){
+    $('.paragraph--type--kdcl-hero .paragraph--type--kdcl-hero__image').each(function(){
       var $backgroundObj = $(this);
       var yPos;
       var coords;
