@@ -2,21 +2,19 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.kdcl_content_location
+    - field.storage.paragraph.kdcl_invert
     - paragraphs.paragraphs_type.kdcl_hero
   module:
     - options
-id: paragraph.kdcl_hero.kdcl_content_location
-field_name: kdcl_content_location
+id: paragraph.kdcl_hero.kdcl_hero_invert
+field_name: kdcl_invert
 entity_type: paragraph
 bundle: kdcl_hero
-label: 'Content Location'
+label: 'Overlay Invert'
 description: ''
 required: false
 translatable: false
-default_value:
-  -
-    value: center
+default_value: {  }
 default_value_callback: ''
 settings: {  }
 field_type: list_string

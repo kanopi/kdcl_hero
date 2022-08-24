@@ -1,2 +1,2 @@
 # KDCL Hero Component
-Hero component with media background, parallax and an overlay.
+Hero component with media background, an overlay, and a zoom effect.

@@ -32,13 +32,12 @@
  *   is an administrator.
  *
  * Fields:
- * - kdcl_background: Media field.
- * - kdcl_content: Long Text field.
- * - kdcl_content_location: A select list with multiple options.
- * - kdcl_invert: A select list with one option.
- * - kdcl_overlay: A select list with multiple options.
- * - kdcl_parallax: A select list with one option.
- * - kdcl_zoom: A select list with multiple options.
+ * - kdcl_hero_background: Media field.
+ * - kdcl_chero_ontent: Long Text field.
+ * - kdcl_chero_ontent_location: A select list with multiple options.
+ * - kdcl_hero_invert: A select list with one option.
+ * - kdcl_hero_overlay: A select list with multiple options.
+ * - kdcl_hero_zoom: A select list with multiple options.
  *
  * @see template_preprocess_paragraph()
  *
@@ -57,10 +56,26 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 ]
 %}
 
+{# Renders Background field. #}
+{# Get the Media type of the background field. #}
+{% if content.kdcl_hero_background|render %}
+  {% set media_type = content.kdcl_hero_background.0['#media'].bundle() %}
+  {% set media_types = [
+    'kdcl_hero_background_image' == media_type ? 'paragraph--background__image',
+    'kdcl_hero_background_video' == media_type ? 'paragraph--background__video',
+    ]
+  %}
+{% endif %}
+
+{# Adds the Media type as a class. #}
+{% if media_type %}
+  {% set classes = classes|merge(media_types) %}
+{% endif %}
+
 {# Renders Content Location field. #}
 {# Sets class from values in database. #}
-{% if content.kdcl_content_location|render %}
-  {% set location_position = content.kdcl_content_location['#items'].getString() %}
+{% if content.kdcl_hero_content_location|render %}
+  {% set location_position = content.kdcl_hero_content_location['#items'].getString() %}
   {% set location_positions = [
     'center' == location_position ? 'paragraph--location__center',
     'left' == location_position ? 'paragraph--location__left',
@@ -70,15 +85,15 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 {% endif %}
 
 {# Merges Content Location field with classes. #}
-{% set content_location_field = content.kdcl_content_location|render %}
+{% set content_location_field = content.kdcl_hero_content_location|render %}
 {% if content_location_field %}
   {% set classes = classes|merge(location_positions) %}
 {% endif %}
 
 {# Renders Invert field. #}
 {# Sets class from values in database. #}
-{% if content.kdcl_invert|render %}
-  {% set invert_level = content.kdcl_invert['#items'].getString() %}
+{% if content.kdcl_hero_invert|render %}
+  {% set invert_level = content.kdcl_hero_invert['#items'].getString() %}
   {% set invert_levels = [
     'invert' == invert_level ? 'paragraph--overlay__invert',
   ]
@@ -86,15 +101,15 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 {% endif %}
 
 {# Merges Invert field with classes. #}
-{% set invert_field = content.kdcl_invert|render %}
+{% set invert_field = content.kdcl_hero_invert|render %}
 {% if invert_field %}
   {% set classes = classes|merge(invert_levels) %}
 {% endif %}
 
 {# Renders Overlay field. #}
 {# Sets data attibute value from values in database. #}
-{% if content.kdcl_overlay|render %}
-  {% set overlay_level = content.kdcl_overlay['#items'].getString() %}
+{% if content.kdcl_hero_overlay|render %}
+  {% set overlay_level = content.kdcl_hero_overlay['#items'].getString() %}
   {% set overlay_levels = [
     '1' == overlay_level ? '1',
     '2' == overlay_level ? '2',
@@ -109,25 +124,10 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   %}
 {% endif %}
 
-{# Renders Parallax field. #}
-{# Sets data attibute value from values in database. #}
-{% if content.kdcl_parallax|render %}
-  {% set parallax_speed = content.kdcl_parallax['#items'].getString() %}
-  {% set parallax_speeds = [
-    '1' == parallax_speed ? '1',
-    '2' == parallax_speed ? '2',
-    '3' == parallax_speed ? '3',
-    '4' == parallax_speed ? '4',
-    '5' == parallax_speed ? '5',
-    '6' == parallax_speed ? '6',
-  ]
-  %}
-{% endif %}
-
 {# Renders Zoom field. #}
 {# Sets class from values in database. #}
-{% if content.kdcl_zoom|render %}
-  {% set zoom_level = content.kdcl_zoom['#items'].getString() %}
+{% if content.kdcl_hero_zoom|render %}
+  {% set zoom_level = content.kdcl_hero_zoom['#items'].getString() %}
   {% set zoom_levels = [
     '1' == zoom_level ? 'paragraph--zoom paragraph--zoom__1',
     '2' == zoom_level ? 'paragraph--zoom paragraph--zoom__2',
@@ -137,20 +137,21 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     '6' == zoom_level ? 'paragraph--zoom paragraph--zoom__6',
     ]
   %}
- {% endif %}
+{% endif %}
 
 {# Merges Zoom field with classes. #}
-{% set zoom_field = content.kdcl_zoom|render %}
+{% set zoom_field = content.kdcl_hero_zoom|render %}
 {% if zoom_field %}
   {% set classes = classes|merge(zoom_levels) %}
 {% endif %}
 
-{# Prints div with classes, & content w/o img/invert/overlay/parallax fields. #}
-<div{{ attributes.addClass(classes).setAttribute('data-overlay', overlay_levels).setAttribute('data-speed', parallax_speeds) }}>
-  {% if content.kdcl_background|render %}
+<div{{ attributes.addClass(classes).setAttribute('data-overlay', overlay_levels)}}>
+  {% if content.kdcl_hero_background|render %}
     <div class="paragraph--type--kdcl-hero__background">
-      {{ content.kdcl_background }}
+      {{ content.kdcl_hero_background }}
     </div>
   {% endif %}
-  {{ content|without('kdcl_background', 'kdcl_invert', 'kdcl_offset', 'kdcl_overlay', 'kdcl_parallax') }}
+  <div class="paragraph--type--kdcl-hero__content w-50">
+    {{ content|without('kdcl_hero_background', 'kdcl_hero_content_location', 'kdcl_hero_invert', 'kdcl_hero_overlay', 'kdcl_hero_zoom') }}
+  </div>
 </div>

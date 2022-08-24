@@ -3,9 +3,3 @@ kdcl-hero:
     component:
       css/kdcl-hero.css:
         minified: false
-  js:
-    js/kdcl-hero.js:
-      minified: false
-  dependencies:
-    - core/jquery
-    - core/drupal

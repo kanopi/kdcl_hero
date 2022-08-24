@@ -1,7 +1,7 @@
 name: KDCL Hero Component
 type: module
 core_version_requirement: ^9 || ^10
-description: Hero component with media background, parallax and an overlay.
+description: Hero component with media background, an overlay, and zoom.
 package: Paragraphs
 dependencies:
   - entity_browser

@@ -1,7 +1,7 @@
 {
   "name": "kanopi/kdcl_hero",
   "type": "drupal-module",
-  "description": "Hero component with media background, parallax and an overlay.",
+  "description": "Hero component with media background, an overlay, and a zoom effect.",
   "keywords": ["Drupal"],
   "license": "GPL-2.0+",
   "homepage": "https://github.com/kanopi/kdcl_hero",

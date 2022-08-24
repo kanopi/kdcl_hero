@@ -1,24 +1,34 @@
-/* Paragraph specific. */
-.paragraph {
-  clear: both;
-}
-
+/* Layout. */
 .paragraph--type--kdcl-hero {
-  display: block;
   position: relative;
-  padding-top: 180px;
-  padding-bottom: 140px;
+  min-height: 320px;
+  width: 100%;
 }
 
-.paragraph--type--kdcl-hero ~ .paragraph--type--kdcl-hero,
-.item .paragraph--type--kdcl-hero {
-  padding: 90px 0;
+.paragraph--type--kdcl-hero .paragraph--type--kdcl-hero__background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+  z-index: 0;
 }
 
-.paragraph--type--kdcl-hero > .paragraph {
-  z-index: 2;
+/* Video specific padding. */
+.paragraph--type--kdcl-hero.paragraph--background__video .paragraph--type--kdcl-hero__background {
+  margin: 120px 0;
 }
 
+/* Image specific padding. */
+.paragraph--type--kdcl-hero.paragraph--background__image .paragraph--type--kdcl-hero__background {
+  margin: 80px 0;
+}
+
+.paragraph--type--kdcl-hero  .paragraph--type--kdcl-hero__content {
+  z-index: 1;
+  position: relative;
+}
+
+/* Invert. */
 .paragraph--type--kdcl-hero:not(.paragraph--overlay--invert) h1,
 .paragraph--type--kdcl-hero:not(.paragraph--overlay--invert) h2,
 .paragraph--type--kdcl-hero:not(.paragraph--overlay--invert) h3,
@@ -31,39 +41,24 @@
   color: #fff;
 }
 
-/* Background Image. */
-.paragraph--type--kdcl-hero__image {
-  background-attachment: scroll;
-  background-clip: border-box;
-  background-color: #252525;
-  background-image: none;
-  background-origin: padding-box;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  height: 100%;
-  left: 0;
-  opacity: 1;
-  position: absolute;
-  top: 0 !important;
-  transition: all 0.3s linear 0s;
-  will-change: transform, top;
-  z-index: 0;
-}
-
-.paragraph--type--kdcl-hero__image:not([class*="col-"]) {
-  width: 100%;
-}
-
-.paragraph--type--kdcl-hero__image img {
-  display: none;
+.paragraph--overlay--invert h1,
+.paragraph--overlay--invert h2,
+.paragraph--overlay--invert h3,
+.paragraph--overlay--invert h4,
+.paragraph--overlay--invert h5,
+.paragraph--overlay--invert h6,
+.paragraph--overlay--invert p,
+.paragraph--overlay--invert ul,
+.paragraph--overlay--invert blockquote {
+  color: #111;
 }
 
 /* Overlay. */
-[data-overlay] {
-  position: relative;
+[data-overlay] .paragraph--type--kdcl-hero__content {
+  padding: 20px;
 }
 
-[data-overlay]::before {
+[data-overlay] .paragraph--type--kdcl-hero__content::before {
   background: #252525 none repeat scroll 0 0;
   content: "";
   display: block;
@@ -75,136 +70,103 @@
   z-index: 1;
 }
 
-[data-overlay] *:not(.paragraph):not(.paragraph--type--kdcl-hero__image) {
+[data-overlay] .paragraph--type--kdcl-hero__content * {
+  position: relative;
   z-index: 2;
 }
 
-.paragraph--overlay__invert[data-overlay]::before {
+.paragraph--overlay__invert[data-overlay] .paragraph--type--kdcl-hero__content::before {
   background: #fff none repeat scroll 0 0;
 }
 
-[data-overlay="1"]::before {
+[data-overlay="1"] .paragraph--type--kdcl-hero__content::before {
   opacity: 0.1;
 }
 
-[data-overlay="2"]::before {
+[data-overlay="2"] .paragraph--type--kdcl-hero__content::before {
   opacity: 0.2;
 }
 
-[data-overlay="3"]::before {
+[data-overlay="3"] .paragraph--type--kdcl-hero__content::before {
   opacity: 0.3;
 }
 
-[data-overlay="4"]::before {
+[data-overlay="4"] .paragraph--type--kdcl-hero__content::before {
   opacity: 0.4;
 }
 
-[data-overlay="5"]::before {
+[data-overlay="5"] .paragraph--type--kdcl-hero__content::before {
   opacity: 0.5;
 }
 
-[data-overlay="6"]::before {
+[data-overlay="6"] .paragraph--type--kdcl-hero__content::before {
   opacity: 0.6;
 }
 
-[data-overlay="7"]::before {
+[data-overlay="7"] .paragraph--type--kdcl-hero__content::before {
   opacity: 0.7;
 }
 
-[data-overlay="8"]::before {
+[data-overlay="8"] .paragraph--type--kdcl-hero__content::before {
   opacity: 0.8;
 }
 
-[data-overlay="9"]::before {
+[data-overlay="9"] .paragraph--type--kdcl-hero__content::before {
   opacity: 0.9;
 }
 
-/* Parallax. */
-.paragraph--type--kdcl-hero {
-  overflow: hidden;
-}
-
-.paragraph--type--kdcl-hero .paragraph--type--kdcl-hero__image {
-  transition: none 0s ease 0s !important;
-}
-
-/* Zoom. */
-.paragraph--zoom .paragraph--type--kdcl-hero__image {
-  overflow: hidden;
-  width: 100%;
-  -webkit-animation: ken-burns 15s ease alternate infinite;
-  -moz-animation: ken-burns 15s ease alternate infinite;
-  -o-animation: ken-burns 15s ease alternate infinite;
-  animation: ken-burns 15s ease alternate infinite;
-  -webkit-transform: translate3d(0, 0, 0);
-}
-
-.paragraph--zoom--1 .paragraph--type--kdcl-hero__image {
-  animation-duration: 10s;
-}
-
-.paragraph--zoom--2 .paragraph--type--kdcl-hero__image {
-  animation-duration: 20s;
-}
-
-.paragraph--zoom--3 .paragraph--type--kdcl-hero__image {
-  animation-duration: 30s;
-}
-
-.paragraph--zoom--4 .paragraph--type--kdcl-hero__image {
-  animation-duration: 40s;
-}
-
-.paragraph--zoom--5 .paragraph--type--kdcl-hero__image {
-  animation-duration: 50s;
-}
-
-.paragraph--zoom--6 .paragraph--type--kdcl-hero__image {
-  animation-duration: 60s;
-}
-
 /* Zoom animation. */
-@-webkit-keyframes ken-burns {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.1);
-  }
-}
-
-@-moz-keyframes ken-burns {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.1);
-  }
-}
-
-@-ms-keyframes ken-burns {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.1);
-  }
-}
-
-@-o-keyframes ken-burns {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.1);
-  }
-}
-
 @keyframes ken-burns {
   0% {
     transform: scale(1);
   }
   100% {
-    transform: scale(1.1);
+    transform: scale(1.2);
+  }
+}
+
+/* Zoom. */
+.paragraph--zoom {
+  overflow: hidden;
+}
+
+.paragraph--zoom .paragraph--type--kdcl-hero__background * {
+  animation: ken-burns 15s ease alternate infinite;
+}
+
+.paragraph--zoom--1 .paragraph--type--kdcl-hero__background * {
+  animation-duration: 10s;
+}
+
+.paragraph--zoom--2 .paragraph--type--kdcl-hero__background * {
+  animation-duration: 20s;
+}
+
+.paragraph--zoom--3 .paragraph--type--kdcl-hero__background * {
+  animation-duration: 30s;
+}
+
+.paragraph--zoom--4 .paragraph--type--kdcl-hero__background * {
+  animation-duration: 40s;
+}
+
+.paragraph--zoom--5 .paragraph--type--kdcl-hero__background * {
+  animation-duration: 50s;
+}
+
+.paragraph--zoom--6 .paragraph--type--kdcl-hero__background * {
+  animation-duration: 60s;
+}
+
+/* Turn off Zoom for those that prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  .paragraph--zoom .paragraph--type--kdcl-hero__background *,
+  .paragraph--zoom--1 .paragraph--type--kdcl-hero__background *,
+  .paragraph--zoom--2 .paragraph--type--kdcl-hero__background *,
+  .paragraph--zoom--3 .paragraph--type--kdcl-hero__background *,
+  .paragraph--zoom--4 .paragraph--type--kdcl-hero__background *,
+  .paragraph--zoom--5 .paragraph--type--kdcl-hero__background *,
+  .paragraph--zoom--6 .paragraph--type--kdcl-hero__background * {
+    animation: none;
   }
 }
