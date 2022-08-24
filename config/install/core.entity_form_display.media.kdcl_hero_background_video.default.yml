@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.media.kdcl_hero_background_video.kdcl_media_oembed_video
+    - field.field.media.kdcl_hero_background_video.kdcl_hero_media_oembed_video
     - media.type.kdcl_hero_background_video
   module:
     - media
@@ -18,7 +18,7 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  kdcl_media_oembed_video:
+  kdcl_hero_media_oembed_video:
     type: oembed_textfield
     weight: 0
     region: content

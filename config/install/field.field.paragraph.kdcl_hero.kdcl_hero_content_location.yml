@@ -2,12 +2,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.kdcl_content_location
+    - field.storage.paragraph.kdcl_hero_content_location
     - paragraphs.paragraphs_type.kdcl_hero
   module:
     - options
 id: paragraph.kdcl_hero.kdcl_hero_content_location
-field_name: kdcl_content_location
+field_name: kdcl_hero_content_location
 entity_type: paragraph
 bundle: kdcl_hero
 label: 'Content Location'

@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.media.kdcl_hero_background_image.kdcl_media_image
+    - field.field.media.kdcl_hero_background_image.kdcl_hero_media_image
     - media.type.kdcl_hero_background_image
     - responsive_image.styles.kdcl_hero
   module:
@@ -12,7 +12,7 @@ targetEntityType: media
 bundle: kdcl_hero_background_image
 mode: default
 content:
-  kdcl_media_image:
+  kdcl_hero_media_image:
     type: responsive_image
     label: visually_hidden
     settings:

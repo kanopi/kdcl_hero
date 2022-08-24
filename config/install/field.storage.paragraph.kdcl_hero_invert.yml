@@ -4,21 +4,15 @@ dependencies:
   module:
     - options
     - paragraphs
-id: paragraph.kdcl_content_location
-field_name: kdcl_content_location
+id: paragraph.kdcl_hero_invert
+field_name: kdcl_hero_invert
 entity_type: paragraph
 type: list_string
 settings:
   allowed_values:
     -
-      value: center
-      label: Center
-    -
-      value: left
-      label: Left
-    -
-      value: right
-      label: Right
+      value: invert
+      label: Invert
   allowed_values_function: ''
 module: options
 locked: false

@@ -8,7 +8,7 @@ source: 'oembed:video'
 queue_thumbnail_downloads: false
 new_revision: false
 source_configuration:
-  source_field: kdcl_media_oembed_video
+  source_field: kdcl_hero_media_oembed_video
   thumbnails_directory: 'public://hero/oembed_thumbnails/[date:custom:Y-m]'
   providers: {  }
 field_map: {  }

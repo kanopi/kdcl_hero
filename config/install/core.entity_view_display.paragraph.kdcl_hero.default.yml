@@ -17,7 +17,7 @@ targetEntityType: paragraph
 bundle: kdcl_hero
 mode: default
 content:
-  kdcl_background:
+  kdcl_hero_background:
     type: entity_reference_entity_view
     label: hidden
     settings:
@@ -26,35 +26,35 @@ content:
     third_party_settings: {  }
     weight: 4
     region: content
-  kdcl_content:
+  kdcl_hero_content:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 5
     region: content
-  kdcl_content_location:
+  kdcl_hero_content_location:
     type: list_key
     label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 3
     region: content
-  kdcl_invert:
+  kdcl_hero_invert:
     type: list_key
     label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 1
     region: content
-  kdcl_overlay:
+  kdcl_hero_overlay:
     type: list_key
     label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 0
     region: content
-  kdcl_zoom:
+  kdcl_hero_zoom:
     type: list_key
     label: hidden
     settings: {  }

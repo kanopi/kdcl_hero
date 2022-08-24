@@ -8,5 +8,5 @@ source: image
 queue_thumbnail_downloads: false
 new_revision: false
 source_configuration:
-  source_field: kdcl_media_image
+  source_field: kdcl_hero_media_image
 field_map: {  }

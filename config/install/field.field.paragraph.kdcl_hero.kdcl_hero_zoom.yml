@@ -2,12 +2,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.kdcl_zoom
+    - field.storage.paragraph.kdcl_hero_zoom
     - paragraphs.paragraphs_type.kdcl_hero
   module:
     - options
 id: paragraph.kdcl_hero.kdcl_hero_zoom
-field_name: kdcl_zoom
+field_name: kdcl_hero_zoom
 entity_type: paragraph
 bundle: kdcl_hero
 label: Zoom

@@ -1,7 +1,7 @@
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.kdcl_content
+    - field.storage.paragraph.kdcl_hero_content
     - paragraphs.paragraphs_type.kdcl_hero
   module:
     - allowed_formats
@@ -10,7 +10,7 @@ third_party_settings:
   allowed_formats:
     allowed_formats: {  }
 id: paragraph.kdcl_hero.kdcl_hero_content
-field_name: kdcl_content
+field_name: kdcl_hero_content
 entity_type: paragraph
 bundle: kdcl_hero
 label: Content

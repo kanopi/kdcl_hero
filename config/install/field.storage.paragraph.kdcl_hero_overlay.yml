@@ -4,30 +4,39 @@ dependencies:
   module:
     - options
     - paragraphs
-id: paragraph.kdcl_zoom
-field_name: kdcl_zoom
+id: paragraph.kdcl_hero_overlay
+field_name: kdcl_hero_overlay
 entity_type: paragraph
 type: list_string
 settings:
   allowed_values:
     -
+      value: '9'
+      label: '9 - Darkest'
+    -
+      value: '8'
+      label: '8'
+    -
+      value: '7'
+      label: '7'
+    -
       value: '6'
-      label: Slowest
+      label: '6'
     -
       value: '5'
-      label: Slower
+      label: '5'
     -
       value: '4'
-      label: Slow
+      label: '4'
     -
       value: '3'
-      label: Fast
+      label: '3'
     -
       value: '2'
-      label: Faster
+      label: '2'
     -
       value: '1'
-      label: Fastest
+      label: '1 - Lightest'
   allowed_values_function: ''
 module: options
 locked: false

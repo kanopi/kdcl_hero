@@ -3,7 +3,7 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.media.media_library
-    - field.field.media.kdcl_hero_background_video.kdcl_media_oembed_video
+    - field.field.media.kdcl_hero_background_video.kdcl_hero_media_oembed_video
     - media.type.kdcl_hero_background_video
 id: media.kdcl_hero_background_video.media_library
 targetEntityType: media
@@ -20,7 +20,7 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  kdcl_media_oembed_video: true
+  kdcl_hero_media_oembed_video: true
   langcode: true
   path: true
   status: true

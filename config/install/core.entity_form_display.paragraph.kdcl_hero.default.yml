@@ -33,9 +33,9 @@ third_party_settings:
         width_breakpoint: 640
     group_main:
       children:
-        - kdcl_background
-        - kdcl_content
-        - kdcl_content_location
+        - kdcl_hero_background
+        - kdcl_hero_content
+        - kdcl_hero_content_location
       label: Main
       region: content
       parent_name: group_content
@@ -50,9 +50,9 @@ third_party_settings:
         required_fields: true
     group_utilities:
       children:
-        - kdcl_overlay
-        - kdcl_invert
-        - kdcl_zoom
+        - kdcl_hero_overlay
+        - kdcl_hero_invert
+        - kdcl_hero_zoom
       label: Utilities
       region: content
       parent_name: group_content
@@ -70,7 +70,7 @@ targetEntityType: paragraph
 bundle: kdcl_hero
 mode: default
 content:
-  kdcl_background:
+  kdcl_hero_background:
     type: entity_browser_entity_reference
     weight: 5
     region: content
@@ -84,7 +84,7 @@ content:
       field_widget_display_settings: {  }
       selection_mode: selection_append
     third_party_settings: {  }
-  kdcl_content:
+  kdcl_hero_content:
     type: text_textarea
     weight: 5
     region: content
@@ -92,25 +92,25 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  kdcl_content_location:
+  kdcl_hero_content_location:
     type: options_select
     weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
-  kdcl_invert:
+  kdcl_hero_invert:
     type: options_select
     weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
-  kdcl_overlay:
+  kdcl_hero_overlay:
     type: options_select
     weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
-  kdcl_zoom:
+  kdcl_hero_oom:
     type: options_select
     weight: 4
     region: content

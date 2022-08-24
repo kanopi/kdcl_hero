@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.media.kdcl_hero_background_image.kdcl_media_image
+    - field.field.media.kdcl_hero_background_image.kdcl_hero_media_image
     - image.style.thumbnail
     - media.type.kdcl_hero_background_image
   module:
@@ -19,7 +19,7 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  kdcl_media_image:
+  kdcl_hero_media_image:
     type: image_image
     weight: 0
     region: content

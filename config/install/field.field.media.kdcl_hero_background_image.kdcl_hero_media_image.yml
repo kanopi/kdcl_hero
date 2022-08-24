@@ -2,12 +2,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.media.kdcl_media_image
+    - field.storage.media.kdcl_hero_media_image
     - media.type.kdcl_hero_background_image
   module:
     - image
-id: media.kdcl_hero_background_image.kdcl_media_image
-field_name: kdcl_media_image
+id: media.kdcl_hero_background_image.kdcl_hero_media_image
+field_name: kdcl_hero_media_image
 entity_type: media
 bundle: kdcl_hero_background_image
 label: Image

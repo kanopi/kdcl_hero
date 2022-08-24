@@ -5,8 +5,8 @@ dependencies:
     - file
     - image
     - media
-id: media.kdcl_media_image
-field_name: kdcl_media_image
+id: media.kdcl_hero_media_image
+field_name: kdcl_hero_media_image
 entity_type: media
 type: image
 settings:

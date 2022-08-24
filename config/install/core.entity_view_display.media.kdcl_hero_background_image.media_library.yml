@@ -3,7 +3,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.media_library
-    - field.field.media.kdcl_hero_background_image.kdcl_media_image
+    - field.field.media.kdcl_hero_background_image.kdcl_hero_media_image
     - image.style.medium
     - media.type.kdcl_hero_background_image
   module:
@@ -26,7 +26,7 @@ content:
     region: content
 hidden:
   created: true
-  kdcl_media_image: true
+  kdcl_hero_media_image: true
   langcode: true
   name: true
   uid: true

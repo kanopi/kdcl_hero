@@ -1,13 +1,13 @@
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.kdcl_background
+    - field.storage.paragraph.kdcl_hero_background
     - media.type.brightcove_video
     - media.type.generic_image
     - media.type.remote_video
     - paragraphs.paragraphs_type.kdcl_hero
 id: paragraph.kdcl_hero.kdcl_hero_background
-field_name: kdcl_background
+field_name: kdcl_hero_background
 entity_type: paragraph
 bundle: kdcl_hero
 label: Background
