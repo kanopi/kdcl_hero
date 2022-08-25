@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.kdcl_hero_parallax
+field_name: kdcl_hero_parallax
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '-8'
+      label: Slowest
+    -
+      value: '-6'
+      label: Slower
+    -
+      value: '-4'
+      label: Slow
+    -
+      value: '-2'
+      label: Normal
+    -
+      value: '2'
+      label: Fast
+    -
+      value: '4'
+      label: Faster
+    -
+      value: '6'
+      label: Fastest
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

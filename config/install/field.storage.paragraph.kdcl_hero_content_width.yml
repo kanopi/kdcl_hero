@@ -1,0 +1,35 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.kdcl_hero_content_width
+field_name: kdcl_hero_content_width
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '3'
+      label: 25%
+    -
+      value: '4'
+      label: 33%
+    -
+      value: '6'
+      label: 50%
+    -
+      value: '9'
+      label: 75%
+    -
+      value: '12'
+      label: 100%
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

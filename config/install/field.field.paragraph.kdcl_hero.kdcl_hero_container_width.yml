@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.kdcl_hero_container_width
+    - paragraphs.paragraphs_type.kdcl_hero
+  module:
+    - options
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: paragraph.kdcl_hero.kdcl_hero_container_width
+field_name: kdcl_hero_container_width
+entity_type: paragraph
+bundle: kdcl_hero
+label: 'Container Width'
+description: "Use to control the container width.\r\nNote this class will not be applied to nested components.\r\nDefault is <I>Container</i>."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
