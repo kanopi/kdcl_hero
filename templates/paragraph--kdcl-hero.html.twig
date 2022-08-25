@@ -33,10 +33,13 @@
  *
  * Fields:
  * - kdcl_hero_background: Media field.
- * - kdcl_hero_ontent: Long Text field.
- * - kdcl_hero_ontent_location: A select list with multiple options.
+ * - kdcl_hero_container_width: A select list with multiple options.
+ * - kdcl_hero_content: Long Text field.
+ * - kdcl_hero_content_location: A select list with multiple options.
+ * - kdcl_hero_content_width: A select list with multiple options.
  * - kdcl_hero_invert: A select list with one option.
  * - kdcl_hero_overlay: A select list with multiple options.
+ * - kdcl_hero_parallax: A select list with multiple options.
  * - kdcl_hero_zoom: A select list with multiple options.
  *
  * @see template_preprocess_paragraph()
@@ -50,6 +53,14 @@
 {# The template default set classes. #}
 {%
 set classes = [
+'paragraph',
+'paragraph--type--' ~ paragraph.bundle|clean_class,
+view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+]
+%}
+
+{%
+set content_classes = [
 'paragraph',
 'paragraph--type--' ~ paragraph.bundle|clean_class,
 view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
@@ -90,6 +101,9 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   {% set classes = classes|merge(location_positions) %}
 {% endif %}
 
+{# Renders Content Width field. #}
+{% set content_width = ' col-sm-' ~ content.kdcl_hero_content_width|string %}
+
 {# Renders Invert field. #}
 {# Sets class from values in database. #}
 {% if content.kdcl_hero_invert|render %}
@@ -124,6 +138,30 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   %}
 {% endif %}
 
+{# Renders Parallax field. #}
+{# Sets data attibute value from values in database. #}
+{% if content.kdcl_hero_parallax|render %}
+  {% set parallax_level = content.kdcl_hero_parallax['#items'].getString() %}
+  {% set parallax_levels = [
+    '-8' == parallax_level ? '-8',
+    '-6' == parallax_level ? '-6',
+    '-4' == parallax_level ? '-4',
+    '-2' == parallax_level ? '-2',
+    '0' == parallax_level ? '0',
+    '2' == parallax_level ? '2',
+    '4' == parallax_level ? '4',
+    '6' == parallax_level ? '6',
+  ]
+  %}
+{% endif %}
+
+{# Add a class if Parallax has value. #}
+{% set parallax_field = content.kdcl_hero_parallax|render %}
+{% set parallax_class = ['rellax',] %}
+{% if parallax_field %}
+  {% set classes = classes|merge(parallax_class) %}
+{% endif %}
+
 {# Renders Zoom field. #}
 {# Sets class from values in database. #}
 {% if content.kdcl_hero_zoom|render %}
@@ -145,13 +183,15 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   {% set classes = classes|merge(zoom_levels) %}
 {% endif %}
 
-<div{{ attributes.addClass(classes).setAttribute('data-overlay', overlay_levels)}}>
+poo {{ content.kdcl_hero_content_width}}
+
+<div{{ attributes.addClass(classes).setAttribute('data-overlay', overlay_levels).setAttribute('data-rellax-speed', parallax_levels) }}>
   {% if content.kdcl_hero_background|render %}
     <div class="paragraph--type--kdcl-hero__background">
       {{ content.kdcl_hero_background }}
     </div>
   {% endif %}
-  <div class="paragraph--type--kdcl-hero__content w-50">
-    {{ content|without('kdcl_hero_background', 'kdcl_hero_content_location', 'kdcl_hero_invert', 'kdcl_hero_overlay', 'kdcl_hero_zoom') }}
+  <div class="paragraph--type--kdcl-hero__content{{ content_width }}">
+    {{ content|without('kdcl_hero_background', 'kdcl_hero_content_location', 'kdcl_hero_content_width', 'kdcl_hero_invert', 'kdcl_hero_overlay', 'kdcl_hero_parallax', 'kdcl_hero_zoom') }}
   </div>
 </div>
