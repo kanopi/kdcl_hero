@@ -102,7 +102,9 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 {% endif %}
 
 {# Renders Content Width field. #}
-{% set content_width = ' col-sm-' ~ content.kdcl_hero_content_width|string %}
+{% if content.kdcl_hero_content_width|render %}
+  {% set content_width = ' col-sm-' ~ content.kdcl_hero_content_width['#items'].getString() %}
+{% endif %}
 
 {# Renders Invert field. #}
 {# Sets class from values in database. #}
@@ -182,8 +184,6 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 {% if zoom_field %}
   {% set classes = classes|merge(zoom_levels) %}
 {% endif %}
-
-poo {{ content.kdcl_hero_content_width}}
 
 <div{{ attributes.addClass(classes).setAttribute('data-overlay', overlay_levels).setAttribute('data-rellax-speed', parallax_levels) }}>
   {% if content.kdcl_hero_background|render %}
