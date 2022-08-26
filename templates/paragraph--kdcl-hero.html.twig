@@ -51,21 +51,11 @@
 {{ attach_library('kdcl_hero/kdcl-hero') }}
 
 {# The template default set classes. #}
-{%
-set classes = [
-'paragraph',
-'paragraph--type--' ~ paragraph.bundle|clean_class,
-view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-]
-%}
-
-{%
-set content_classes = [
-'paragraph',
-'paragraph--type--' ~ paragraph.bundle|clean_class,
-view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-]
-%}
+{% set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+] %}
 
 {# Renders Background field. #}
 {# Get the Media type of the background field. #}
@@ -84,25 +74,14 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 {% endif %}
 
 {# Renders Content Location field. #}
-{# Sets class from values in database. #}
 {% if content.kdcl_hero_content_location|render %}
-  {% set location_position = content.kdcl_hero_content_location['#items'].getString() %}
-  {% set location_positions = [
-    'center' == location_position ? 'paragraph--location__center',
-    'left' == location_position ? 'paragraph--location__left',
-    'right' == location_position ? 'paragraph--location__right',
-  ]
-  %}
-{% endif %}
-
-{# Merges Content Location field with classes. #}
-{% set content_location_field = content.kdcl_hero_content_location|render %}
-{% if content_location_field %}
-  {% set classes = classes|merge(location_positions) %}
+  {% set content_location = ' ' ~ content.kdcl_hero_content_location['#items'].getString() %}
 {% endif %}
 
 {# Renders Content Width field. #}
-{% set content_width = ' col-sm-' ~ content.kdcl_hero_content_width|string %}
+{% if content.kdcl_hero_content_width|render %}
+  {% set content_width = ' col-sm-' ~ content.kdcl_hero_content_width['#items'].getString() %}
+{% endif %}
 
 {# Renders Invert field. #}
 {# Sets class from values in database. #}
@@ -183,15 +162,15 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   {% set classes = classes|merge(zoom_levels) %}
 {% endif %}
 
-poo {{ content.kdcl_hero_content_width}}
-
 <div{{ attributes.addClass(classes).setAttribute('data-overlay', overlay_levels).setAttribute('data-rellax-speed', parallax_levels) }}>
   {% if content.kdcl_hero_background|render %}
     <div class="paragraph--type--kdcl-hero__background">
       {{ content.kdcl_hero_background }}
     </div>
   {% endif %}
-  <div class="paragraph--type--kdcl-hero__content{{ content_width }}">
-    {{ content|without('kdcl_hero_background', 'kdcl_hero_content_location', 'kdcl_hero_content_width', 'kdcl_hero_invert', 'kdcl_hero_overlay', 'kdcl_hero_parallax', 'kdcl_hero_zoom') }}
+  <div class="container{{ content_location }}">
+    <div class="paragraph--type--kdcl-hero__content{{ content_width }}">
+      {{ content|without('field_container_width', 'kdcl_hero_background', 'kdcl_hero_content_location', 'kdcl_hero_content_width', 'kdcl_hero_invert', 'kdcl_hero_overlay', 'kdcl_hero_parallax', 'kdcl_hero_zoom') }}
+    </div>
   </div>
 </div>

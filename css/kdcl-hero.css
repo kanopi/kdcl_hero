@@ -13,16 +13,26 @@
   z-index: 0;
 }
 
-/* Video specific padding. */
-.paragraph--type--kdcl-hero.paragraph--background__video .paragraph--type--kdcl-hero__background {
-  margin: 120px 0;
+/* Make the image fill the container. */
+.paragraph--type--kdcl-hero .paragraph--type--kdcl-hero__background img,
+.paragraph--type--kdcl-hero .paragraph--type--kdcl-hero__background picture {
+  height: auto;
+  width: 100%;
 }
 
 /* Image specific padding. */
-.paragraph--type--kdcl-hero.paragraph--background__image .paragraph--type--kdcl-hero__background {
-  margin: 80px 0;
+.paragraph--background__image {
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 
+/* Video specific padding. */
+.paragraph--background__video {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+/* Raise up the content area. */
 .paragraph--type--kdcl-hero  .paragraph--type--kdcl-hero__content {
   z-index: 1;
   position: relative;
@@ -121,7 +131,7 @@
     transform: scale(1);
   }
   100% {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
 }
 
