@@ -3,3 +3,7 @@ kdcl-hero:
     component:
       css/kdcl-hero.css:
         minified: false
+rellax:
+  js:
+    js/rellax.min.js: { minified: true, preprocess: false, attributes: { defer: true } }
+    js/rellax-init.js: { minified: false, preprocess: false, attributes: { defer: true } }

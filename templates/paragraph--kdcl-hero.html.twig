@@ -139,6 +139,7 @@
 {% set parallax_class = ['rellax',] %}
 {% if parallax_field %}
   {% set classes = classes|merge(parallax_class) %}
+  {{ attach_library('kdcl_hero/rellax') }}
 {% endif %}
 
 {# Renders Zoom field. #}
@@ -168,9 +169,11 @@
       {{ content.kdcl_hero_background }}
     </div>
   {% endif %}
-  <div class="container{{ content_location }}">
-    <div class="paragraph--type--kdcl-hero__content{{ content_width }}">
-      {{ content|without('field_container_width', 'kdcl_hero_background', 'kdcl_hero_content_location', 'kdcl_hero_content_width', 'kdcl_hero_invert', 'kdcl_hero_overlay', 'kdcl_hero_parallax', 'kdcl_hero_zoom') }}
+  <div class="container">
+    <div class="row{{ content_location }}">
+      <div class="paragraph--type--kdcl-hero__content{{ content_width }}">
+        {{ content|without('field_container_width', 'kdcl_hero_background', 'kdcl_hero_content_location', 'kdcl_hero_content_width', 'kdcl_hero_invert', 'kdcl_hero_overlay', 'kdcl_hero_parallax', 'kdcl_hero_zoom') }}
+      </div>
     </div>
   </div>
 </div>
