@@ -4,21 +4,21 @@ dependencies:
   module:
     - options
     - paragraphs
-id: paragraph.kdcl_hero_content_location
-field_name: kdcl_hero_content_location
+id: paragraph.field_container_width
+field_name: field_container_width
 entity_type: paragraph
 type: list_string
 settings:
   allowed_values:
     -
-      value: justify-content-center
-      label: Center
+      value: container
+      label: Container
     -
-      value: justify-content-start
-      label: Left
+      value: container-fluid
+      label: 'Container Fluid'
     -
-      value: justify-content-end
-      label: Right
+      value: full
+      label: 'Full Width'
   allowed_values_function: ''
 module: options
 locked: false

@@ -3,14 +3,14 @@ status: true
 dependencies:
   config:
     - entity_browser.browser.kdcl_hero_browser
-    - field.field.paragraph.kdcl_hero.kdcl_hero_container_width
-    - field.field.paragraph.kdcl_hero.kdcl_hero_content_width
-    - field.field.paragraph.kdcl_hero.kdcl_hero_parallax
+    - field.field.paragraph.kdcl_hero.field_container_width
     - field.field.paragraph.kdcl_hero.kdcl_hero_background
     - field.field.paragraph.kdcl_hero.kdcl_hero_content
     - field.field.paragraph.kdcl_hero.kdcl_hero_content_location
+    - field.field.paragraph.kdcl_hero.kdcl_hero_content_width
     - field.field.paragraph.kdcl_hero.kdcl_hero_invert
     - field.field.paragraph.kdcl_hero.kdcl_hero_overlay
+    - field.field.paragraph.kdcl_hero.kdcl_hero_parallax
     - field.field.paragraph.kdcl_hero.kdcl_hero_zoom
     - paragraphs.paragraphs_type.kdcl_hero
   module:
@@ -52,7 +52,7 @@ third_party_settings:
         required_fields: true
     group_utilities:
       children:
-        - kdcl_hero_container_width
+        - field_container_width
         - kdcl_hero_content_location
         - kdcl_hero_content_width
         - kdcl_hero_overlay
@@ -76,21 +76,9 @@ targetEntityType: paragraph
 bundle: kdcl_hero
 mode: default
 content:
-  kdcl_hero_container_width:
+  field_container_width:
     type: options_select
-    weight: 8
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  kdcl_hero_content_width:
-    type: options_select
-    weight: 10
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  kdcl_hero_parallax:
-    type: options_select
-    weight: 13
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -118,13 +106,19 @@ content:
     third_party_settings: {  }
   kdcl_hero_content_location:
     type: options_select
-    weight: 9
+    weight: 16
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  kdcl_hero_content_width:
+    type: options_select
+    weight: 17
     region: content
     settings: {  }
     third_party_settings: {  }
   kdcl_hero_invert:
     type: options_select
-    weight: 12
+    weight: 19
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -136,13 +130,19 @@ content:
     third_party_settings: {  }
   kdcl_hero_overlay:
     type: options_select
-    weight: 11
+    weight: 18
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  kdcl_hero_parallax:
+    type: options_select
+    weight: 20
     region: content
     settings: {  }
     third_party_settings: {  }
   kdcl_hero_zoom:
     type: options_select
-    weight: 14
+    weight: 21
     region: content
     settings: {  }
     third_party_settings: {  }

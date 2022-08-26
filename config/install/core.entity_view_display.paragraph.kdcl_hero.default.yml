@@ -2,14 +2,14 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.kdcl_hero.kdcl_hero_container_width
-    - field.field.paragraph.kdcl_hero.kdcl_hero_content_width
-    - field.field.paragraph.kdcl_hero.kdcl_hero_parallax
+    - field.field.paragraph.kdcl_hero.field_container_width
     - field.field.paragraph.kdcl_hero.kdcl_hero_background
     - field.field.paragraph.kdcl_hero.kdcl_hero_content
     - field.field.paragraph.kdcl_hero.kdcl_hero_content_location
+    - field.field.paragraph.kdcl_hero.kdcl_hero_content_width
     - field.field.paragraph.kdcl_hero.kdcl_hero_invert
     - field.field.paragraph.kdcl_hero.kdcl_hero_overlay
+    - field.field.paragraph.kdcl_hero.kdcl_hero_parallax
     - field.field.paragraph.kdcl_hero.kdcl_hero_zoom
     - paragraphs.paragraphs_type.kdcl_hero
   module:
@@ -20,26 +20,12 @@ targetEntityType: paragraph
 bundle: kdcl_hero
 mode: default
 content:
-  kdcl_hero_container_width:
+  field_container_width:
     type: list_key
     label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 0
-    region: content
-  kdcl_hero_content_width:
-    type: list_key
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  kdcl_hero_parallax:
-    type: list_key
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 5
     region: content
   kdcl_hero_background:
     type: entity_reference_entity_view
@@ -64,6 +50,13 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
+  kdcl_hero_content_width:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
   kdcl_hero_invert:
     type: list_key
     label: hidden
@@ -77,6 +70,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 3
+    region: content
+  kdcl_hero_parallax:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
     region: content
   kdcl_hero_zoom:
     type: list_key
